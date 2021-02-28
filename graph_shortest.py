@@ -57,8 +57,6 @@ def Graph(fileName):
         nearbyList[edge[1]].add((edge[0], edge[2]))
     return nodes, nearbyList
 
-
-
 # ==================================#
 #               Main                #
 #===================================#
@@ -88,9 +86,11 @@ while True:
             if (i+1) < len(path):
                 showPath += " -> "
             i += 1
+        if distance != INF :
+            print("Path form ", startNode, " to ", endNode, " : [ ", showPath, " ] and have cost ", distance)
+        else :
+            print("Path form ", startNode, " to ", endNode, " : No path .")
 
-        print("Path form ", startNode, " to ", endNode,
-              " : [ ", showPath, " ] and have cost ", distance)
     except Exception as e:
         print("!! This node ", e, " information is not available. !!")
     print("=======================================================================")
